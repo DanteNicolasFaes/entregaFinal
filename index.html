@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce de Tecnología</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.3.0/sweetalert2.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">E-Commerce de Tecnología</h1>
+
+        <!-- Lista de productos -->
+        <div id="product-list" class="row"></div>
+
+        <!-- Carrito de compras -->
+        <div id="cart" class="mt-4">
+            <h2>Carrito de Compras</h2>
+            <ul id="cart-items" class="list-group"></ul>
+            <p class="text-center">Total: $<span id="total">0.00</span></p>
+            <button id="checkoutBtn" class="btn btn-primary">Realizar compra</button>
+        </div>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>
+
