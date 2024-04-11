@@ -135,3 +135,33 @@ renderProductList();
 
 // Centrar el botón de "Realizar compra" en el medio
 checkoutBtn.classList.add('mx-auto', 'd-block');
+
+// Función para renderizar el carrito
+function renderCart() {
+    cartItemsElement.innerHTML = '';
+    let totalPrice = 0;
+    cart.forEach(item => {
+        const li = document.createElement('li');
+        li.className = 'list-group-item';
+        li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+        cartItemsElement.appendChild(li);
+        totalPrice += item.price;
+    });
+    totalElement.textContent = totalPrice.toFixed(2);
+    
+    // Almacenar el carrito en localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// Función para inicializar la aplicación
+function initApp() {
+    // Verificar si hay un carrito guardado en localStorage
+    const storedCart = localStorage.getItem('cart');
+    if (storedCart) {
+        cart = JSON.parse(storedCart);
+        renderCart(); // Renderizar el carrito guardado
+    }
+}
+
+// Llamar a la función de inicialización
+initApp();
